@@ -1,3 +1,4 @@
+var scriptPath = document.domain === 'www.fatcatfablab.org' ? 'http://civicrm.fatcatfablab.org/webapp/' : '';
 var scripts = [
 		"bower_components/handlebars/handlebars.js",
 		"bower_components/underscore/underscore.js",
@@ -13,7 +14,7 @@ var scripts = [
 	];
 
 function loadScriptAtIndex(i){
-	$.getScript(scripts[i]).done(function(){
+	$.getScript(scriptPath + scripts[i]).done(function(){
 		if(scripts[i + 1]){
 			loadScriptAtIndex(i+1);
 		}else{
