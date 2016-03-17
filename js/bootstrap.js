@@ -1,5 +1,4 @@
-var scriptPath = '',
-	scripts = [
+var scripts = [
 		"bower_components/handlebars/handlebars.js",
 		"bower_components/underscore/underscore.js",
 		"bower_components/backbone/backbone.js",
@@ -11,11 +10,10 @@ var scriptPath = '',
 		"js/Entities/Event/EventCollection.js",
 		"js/Apps/Events/EventController.js",
 		"js/Apps/Events/EventViews.js"
-	],
-	scriptPromises = [];
+	];
 
-function loadNextScript(i){
-	$.getScript(scriptPath + scripts[i]).done(function(){
+function loadScriptAtIndex(i){
+	$.getScript(scripts[i]).done(function(){
 		if(scripts[i + 1]){
 			loadNextScript(i+1);
 		}else{
@@ -23,7 +21,7 @@ function loadNextScript(i){
 		}
 	});
 }
-loadNextScript(0);
+loadScriptAtIndex(0);
 
 function initializeApplication(){
 	App.events = new App.Entities.Event.EventCollection();
