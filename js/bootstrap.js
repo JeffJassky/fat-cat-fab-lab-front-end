@@ -15,7 +15,7 @@ var scripts = [
 function loadScriptAtIndex(i){
 	$.getScript(scripts[i]).done(function(){
 		if(scripts[i + 1]){
-			loadNextScript(i+1);
+			loadScriptAtIndex(i+1);
 		}else{
 			initializeApplication();
 		}
