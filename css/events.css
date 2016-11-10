@@ -1,0 +1,134 @@
+h1, h2, h3, h4, h5, h6{
+  font-weight: 200;
+}
+
+.event {
+  margin-bottom: 1em;
+  overflow: auto;
+  border-top: 1px solid #eee;
+  padding-top: 1em;
+}
+.event a{
+  color: #ff8000;
+}
+.event .datetime{
+  display: block;
+  height: 100px;
+  margin-right: 1em;
+  text-transform: uppercase;
+  width: 18%;
+  text-align: right;
+  margin-top: 10px;
+  float: left;
+  text-transform: uppercase;
+}
+.event span.date{
+  display: block;
+  font-weight: bolder;
+  display: block;
+}
+.event span.time{
+  display: block;
+}
+
+.event span.summary{
+  font-size: 2em;
+  line-height: 1.5em;
+}
+
+.event span.description{
+  display: block;
+}
+.event span.price{
+    display: inline-block;
+    padding: 0px 6px;
+    border-radius: 3px;
+    color: #fff;
+    background: green;
+}
+.event span.price.fee{
+    background: #ff8000;
+}
+.event span.price.free{
+    background: green;
+}
+.event span.price.na{
+    background: gray;
+}
+
+
+
+.courses{
+  overflow: auto;
+}
+.course{
+    background: #eeeeee;
+    width: 50%;
+    float: left;
+    overflow: auto;
+    min-width: 300px;
+    box-sizing: border-box;
+    border: 1em solid #fff;
+}
+.course-image-wrapper{
+    position: relative;
+    padding-bottom: 60%;
+    overflow: hidden;
+}
+.course-image-wrapper img{
+    width: 100%;
+    position: absolute;
+}
+.course-details{
+  margin-left: 55%;
+}
+.course-details span{
+    display: block;
+}
+.course-images{
+  clear: both;
+  display: none;
+}
+.course-images img{
+  width: 50%;
+}
+
+.course-page{
+    overflow: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 3em;
+}
+.course-page .course-image-wrapper{
+    width: 50%;
+    float: left;
+    margin-right: 3em;
+}
+.course-description{
+  line-height: 1.7em;
+}
+.course-title{
+  margin-bottom: 0;
+}
+.course-session{
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
+  margin-left: 55%;
+  margin-bottom: -1px;
+  padding: 7px 0;
+}
+.course-price{
+  font-size: 1.5em;
+  color: #30cfd5;
+  line-height: 1.5em;
+  font-weight: 200;
+}
+.add-to-cart-button{
+float: right;
+}
+.starting-dates-label{
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  padding: 6px 0;
+  color: #999;
+}

@@ -6,7 +6,8 @@ var App = new Backbone.Marionette.Application({
     pushState:true,
     events: null,
     regions: {
-        body: 'div#body'
+        mainRegion: 'main#page',
+        eventRegion: 'main#events'
     },
     onBeforeStart: function(){
         Backbone.LocalStorage.setVersion(this.todaysDate());
