@@ -87,7 +87,7 @@ App.module('Courses.Views', function(Views, App){
           var selectedCourse = this.model.get('startDates')[startDateIndex];
           this.ui.courseSessions.hide();
           this.ui.courseSessions.filter('[data-course-index="'+startDateIndex+'"]').show();
-          this.ui.addToCartButton.attr('src', selectedCourse.registration_url);
+          this.ui.addToCartButton.attr('href', selectedCourse.registration_url);
         }
     });
 
