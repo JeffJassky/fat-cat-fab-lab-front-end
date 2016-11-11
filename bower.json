@@ -1,0 +1,22 @@
+{
+  "name": "fat-cat-fab-lab-front-end",
+  "homepage": "https://github.com/JeffJassky/fat-cat-fab-lab-front-end",
+  "authors": [
+    "Jeff Jassky <jeff@jeffjassky.com>"
+  ],
+  "description": "Front-End code for FatCatFabLab.org",
+  "main": "/js/bootstrap.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone-localstorage": "~0.3.2",
+    "handlebars": "~4.0.5",
+    "marionette": "~2.4.4"
+  }
+}
