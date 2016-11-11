@@ -31,9 +31,12 @@ App.module('Courses.Views', function(Views, App){
                     '{{#if mainPhoto}}<img src="{{mainPhoto}}">{{/if}}' +
                 '</div>' +
                 '<div class="course-details">' +
-                    '<h1 class="course-title">{{title}}</h1>' +
+                  '<h1 class="course-title">{{title}}</h1>' +
               		'<span class="course-price">${{price}}</span>' +
-                    '<span class="course-description">{{{description}}}</span>' +
+                  '<span class="course-description">{{{description}}}</span>' +
+                    '{{#if this.sessions}}' +
+                      '<span class="skill-level">Skill Level: {{{skillLevel}}}</span>' +
+                    '{{/if}}' +
                 '</div>' +
               	'{{#if startDates}}' +
                   '<div class="course-details">' +
@@ -81,6 +84,7 @@ App.module('Courses.Views', function(Views, App){
         },
       	onRender: function(){
           this.ui.select.change();
+          this.$el.find('p:last-child').remove();
         },
       	onChangeSelect: function(){
           var startDateIndex = this.ui.select.val();

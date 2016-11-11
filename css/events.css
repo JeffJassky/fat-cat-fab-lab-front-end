@@ -132,3 +132,6 @@ float: right;
   padding: 6px 0;
   color: #999;
 }
+span.label{
+  margin-top: 1em;
+}
