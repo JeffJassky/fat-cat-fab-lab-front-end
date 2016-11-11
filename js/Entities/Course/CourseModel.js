@@ -28,7 +28,8 @@ App.module('Entities.Course', function(Course){
           startDate.startTimeNice = dateHelper.timeOfDay(new Date(startDate.start_date));
           if(startDate.sessions){
             // FORMAT SESSION DATE STRINGS TO BE PRETTIER
-            startDate.sessions = _.each(startDate.sessions, function(session){
+            startDate.sessions = _.each(startDate.sessions, function(session, index){
+              session.number = index + 1;
               session.startDateNice = dateHelper.dateNice(new Date(session.start_date));
               session.startTimeNice = dateHelper.timeOfDay(new Date(session.start_date));
             });

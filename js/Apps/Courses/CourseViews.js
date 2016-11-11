@@ -54,7 +54,7 @@ App.module('Courses.Views', function(Views, App){
                             '<span class="label starting-dates-label">{{../numberOfSessions}} Sessions in this course</span>' +
                             '{{#each this.sessions}}' +
                               '<div class="course-session">' +
-                                  '{{this.startDateNice}} at {{this.startTimeNice}}' +
+                                  '{{this.number}}. {{this.startDateNice}} at {{this.startTimeNice}}' +
                               '</div>' +
                             '{{/each}}' + 
                         '</div>' +
