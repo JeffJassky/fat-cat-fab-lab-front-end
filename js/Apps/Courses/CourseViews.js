@@ -34,9 +34,9 @@ App.module('Courses.Views', function(Views, App){
                   '<h1 class="course-title">{{title}}</h1>' +
               		'<span class="course-price">${{price}}</span>' +
                   '<span class="course-description">{{{description}}}</span>' +
-                    '{{#if this.sessions}}' +
-                      '<span class="skill-level">Skill Level: {{{skillLevel}}}</span>' +
-                    '{{/if}}' +
+                  '{{#if skillLevel}}' +
+                    '<span class="skill-level">Skill Level: {{{skillLevel}}}</span>' +
+                  '{{/if}}' +
                 '</div>' +
               	'{{#if startDates}}' +
                   '<div class="course-details">' +
