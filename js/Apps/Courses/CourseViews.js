@@ -37,6 +37,9 @@ App.module('Courses.Views', function(Views, App){
                   '{{#if skillLevel}}' +
                     '<span class="skill-level">Skill Level: {{{skillLevel}}}</span>' +
                   '{{/if}}' +
+                  '{{#if max_participants}}' +
+                    '<span class="max-participants">Maximum Students: {{{max_participants}}}</span>' +
+                  '{{/if}}' +
                 '</div>' +
               	'{{#if startDates}}' +
                   '<div class="course-details">' +
