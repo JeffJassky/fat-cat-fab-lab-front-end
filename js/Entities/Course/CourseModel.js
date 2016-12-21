@@ -5,7 +5,6 @@ App.module('Entities.Course', function(Course){
   
   Course.CourseModel = Backbone.Model.extend({
     parse: function(response){
-      console.log(response);
       if(response.photos){
         response.mainPhoto = response.photos[0];
         delete response.photos[0];
@@ -15,8 +14,8 @@ App.module('Entities.Course', function(Course){
         // FILTER OUT ALL UNUSED KEYS FOR START DATES
         response.startDates = _.map(response.startDates, function(startDate){
           return {
-            start_date: startDate.start_date,
-            end_date: startDate.end_date,
+            start_date: startDate.start_date.replace(/\s/, 'T'),
+            end_date: startDate.end_date.replace(/\s/, 'T'),
             registration_url: startDate.registration_url,
             sessions: startDate.sessions
           };
