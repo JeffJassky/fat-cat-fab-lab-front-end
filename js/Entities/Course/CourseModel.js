@@ -14,8 +14,8 @@ App.module('Entities.Course', function(Course){
         // FILTER OUT ALL UNUSED KEYS FOR START DATES
         response.startDates = _.map(response.startDates, function(startDate){
           return {
-            start_date: startDate.start_date.replace(/\s/, 'T'),
-            end_date: startDate.end_date.replace(/\s/, 'T'),
+            start_date: startDate.start_date_timestamp,
+            end_date: startDate.end_date_timestamp,
             registration_url: startDate.registration_url,
             sessions: startDate.sessions
           };
@@ -23,14 +23,21 @@ App.module('Entities.Course', function(Course){
 
         // FORMAT START DATE STRINGS TO BE PRETTIER
         response.startDates = _.each(response.startDates, function(startDate){
-          startDate.startDateNice = dateHelper.dateNice(new Date(startDate.start_date));
-          startDate.startTimeNice = dateHelper.timeOfDay(new Date(startDate.start_date));
+          
+           var start_time = new Date();
+           start_time.setTime(startDate.start_date * 1000);
+          
+           var nyc = 5*60*60000;
+           var user = start_time.getTimezoneOffset()*60000;
+           var renderedDate = new Date(start_time.getTime() + user - nyc);
+          startDate.startDateNice = dateHelper.dateNice(renderedDate);
+          startDate.startTimeNice = dateHelper.timeOfDay(renderedDate);
           if(startDate.sessions){
             // FORMAT SESSION DATE STRINGS TO BE PRETTIER
             startDate.sessions = _.each(startDate.sessions, function(session, index){
               session.number = index + 1;
-              session.startDateNice = dateHelper.dateNice(new Date(session.start_date));
-              session.startTimeNice = dateHelper.timeOfDay(new Date(session.start_date));
+              session.startDateNice = dateHelper.dateNice(new Date(session.start_date * 1000));
+              session.startTimeNice = dateHelper.timeOfDay(new Date(session.start_date *1000));
             });
           }
         });
