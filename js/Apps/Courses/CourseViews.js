@@ -30,7 +30,7 @@ App.module('Courses.Views', function(Views, App){
                 '<div class="course-image-wrapper">' +
                     '{{#if mainPhoto}}<img src="{{mainPhoto}}">{{/if}}' +
                 '</div>' +
-                '<div class="course-details">' +
+                '<div class="course-details" id={{hash}}>' +
                   '<h1 class="course-title">{{title}}</h1>' +
               		'<span class="course-price">${{price}}</span>' +
                   '<span class="course-description">{{{description}}}</span>' +
