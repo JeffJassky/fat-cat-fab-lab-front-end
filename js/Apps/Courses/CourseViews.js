@@ -86,6 +86,14 @@ App.module('Courses.Views', function(Views, App){
 			'change @ui.select': 'onChangeSelect'        
         },
       	onRender: function(){
+          setTimeout(function(){
+            var id = document.location.hash.substring(1);
+            var elementExists = document.getElementById(id);
+            if (null != elementExists){
+              console.log(id);
+              document.getElementById(id).scrollIntoView();
+            }
+          }, 0); 
           this.ui.select.change();
           this.$el.find('p:last-child').remove();
         },
